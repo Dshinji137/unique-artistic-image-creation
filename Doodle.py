@@ -117,8 +117,8 @@ style_map = plt.imread('Renoir_sem.png')
 style_map = convertMap(style_map)
 
 content_image = plt.imread('Renoir.jpg')
-shape = content_image.shape
 content_image = convertInput(content_image)
+# your own desired layout
 content_map = plt.imread('Landscape_sem.png')
 content_map = convertMap(content_map)
 
@@ -328,16 +328,9 @@ for i in range(3):
 # draw synthesized image
 plt.figure(figsize=(12,12))
 mimus = np.asarray([0,1,1]).reshape((3,1,1))
-for i in range(len(result)):
-    plt.subplot(3, 3, i+1)
-    plt.gca().xaxis.set_visible(False)    
-    plt.gca().yaxis.set_visible(False)
-    im = finalize_image(result[i])
-    plt.imshow(im)
+plt.subplot(3, 3, i+1)
+plt.gca().xaxis.set_visible(False)    
+plt.gca().yaxis.set_visible(False)
+im = finalize_image(result[2])
+plt.imshow(im)
 plt.tight_layout()
-
-
-# In[ ]:
-
-
-
